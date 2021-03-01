@@ -48,7 +48,8 @@
     }
 
     a,
-    span {
+    span,
+    .mobile {
         display: none;
     }
 
@@ -113,17 +114,24 @@
 
     @media (max-width: 768px) {
         div.container {
-            align-items: flex-start;
+            align-items: center;
+            justify-content: space-evenly;
+            height: 100vh;
         }
 
-        embed {
-            flex-basis: 100%;
+        embed,
+        .changer {
+            display: none;
+        }
+
+        .mobile {
+            display: block;
         }
     }
 </style>
 
 <body>
-    <div>
+    <div class="changer">
         <span>PL /</span>
         <a href="#en" class="en"> EN</a>
     </div>
@@ -133,10 +141,14 @@
     </div>
     <div class="container">
         <embed src="./cv-rafal-tonski.pdf" type="application/pdf" id="pl">
+        <a href="./cv-rafal-tonski.pdf" download="./cv-rafal-tonski.pdf" class="mobile">Pobierz polską wersję</a>
         <hr>
         <embed src="./cv-en-rafal-tonski.pdf" type="application/pdf" id="en">
+        <a href="./cv-en-rafal-tonski.pdf" download="./cv-en-rafal-tonski.pdf" class="mobile">Download English
+            Version</a>
+
     </div>
-    <div>
+    <div class="changer">
         <a href="#pl" class="pl">PL</a>
 
         <span>/ EN</span>
